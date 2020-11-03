@@ -1,0 +1,70 @@
+.jumbotron {
+    margin-top: 20px;
+}
+
+.jumbotronHeaderImg {
+    background-image: url(https://i.pinimg.com/originals/5d/b9/5e/5db95e2eaf81452a4f89d488cf29fc3f.jpg);
+    background-size: cover;
+}
+
+.table {
+    margin-top: 25px;
+}
+
+@media (min-width: 300px) {
+    img {
+        max-width: 25px;
+        max-height: 25px;
+    }
+
+    tr.tablet {
+        display: none;
+    }
+
+    tr.mobile {
+        display: table-row;
+    }
+
+    h1 {
+       display: none;
+        
+    }
+
+    h2 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (min-width:768px) {
+    img {
+        max-width: 50px;
+        max-height: 50px;
+    }
+
+    tr.tablet {
+        display: table-row;
+    }
+    tr.mobile {
+        display: none;
+    }
+
+    h1 {
+        display: block;
+        margin-bottom: 40px;
+        text-align: center;
+     }
+
+     h2 {
+        display: none;
+     }
+    
+}
+
+
+/* 
+h1 {
+
+    margin-bottom: 40px;
+} */
+

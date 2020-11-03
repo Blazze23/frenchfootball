@@ -1,0 +1,141 @@
+.jumbotron {
+    margin-top: 20px;
+}
+
+.jumbotronHeaderImg {
+    background-image: url(https://i.pinimg.com/originals/5d/b9/5e/5db95e2eaf81452a4f89d488cf29fc3f.jpg);
+    background-size: cover;
+}
+
+#field.striped {
+    background-image: url(src/assets/fudbalski_teren.jpg);
+    background-size: cover;
+    height: 600px;
+    width: 400px;
+    margin-top: 100px;
+    margin-left: 200px;
+    position: relative;
+}
+
+.Forma {
+    margin-top: 100px;
+}
+
+.card {
+    color: gold;
+    margin-left: 60px;
+}
+
+
+.napad {
+    position: absolute;
+    margin-left: 80px;
+    margin-right: 80px;
+    top: 75px;
+}
+
+.sredina {
+    position: absolute;
+    top: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 15px;
+}
+
+.odbrana {
+    position: absolute;
+    top: 360px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    padding: 15px;
+}
+
+.golman {
+    position: absolute;
+    top: 510px;
+    margin-left: 130px;
+    margin-right: 130px;
+    
+}
+
+.imeIgraca {
+    margin-top: -15px;
+}
+
+.noContentCard {
+    display: none;
+}
+
+@media (max-width:1200px) {
+    #field.striped {
+        margin-left: 150px;
+        margin-right: auto;
+    }
+    .noContentCard {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .card {
+        color: gold;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #field.striped {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .noContentCard {
+        display: none;
+    }
+}
+
+@media (max-width: 575px) {
+    .card {
+        color: gold;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: smaller;
+    }
+
+    #field.striped {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .noContentCard {
+        display: none;
+    }
+
+
+}
+
+@media (max-width: 460px) {
+   .card {
+       display: none;
+   }
+   #field.striped {
+   display: none;
+}
+.noContentCard {
+    display: block;
+    margin: auto;
+}
+.noContent {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding: 0px;
+}
+
+.noContentRow {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+}

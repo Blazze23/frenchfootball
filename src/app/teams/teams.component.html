@@ -1,0 +1,125 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="jumbotron jumbotronHeaderImg">
+                <h1 class="text-center"><b><i class="fas fa-users"></i> Teams <i class="fas fa-users"></i></b></h1>
+                <div class="row">
+                    <div class="col-lg-2 col-md-4 col-sm-4 col-4 margine" *ngFor="let tim of timovi">
+                        <div class="text-center"><img src="{{ tim.team_logo }}" alt="Logo tima" class="img_logo"></div>
+                        <div class="text-center"><button class="btn bnt-block btn-dark btn_team" value="{{tim.team_key}}"
+                                (click)="ucitajTim($event); showTeam($event)">{{tim.team_name}}</button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <!-- Informacije o timu -->
+                <div class="row">
+                   <div class="col-lg-4"></div>
+                   <div class="col-lg-4" [ngClass]="status ? 'showTeam' : 'hideTeam'">
+                    <div class="card text-white bg-dark mb-3 team_card" style="width: 250px;">
+                        <div class="text-center"> <img src="{{jedan_tim.team_logo}}" class="card-img-top"
+                                alt="Logo Tima"></div>
+                        <div class="card-body">
+                            <p class="card-title">Team Name: <b><span
+                                        class="team_name">{{jedan_tim.team_name}}</span></b></p>
+                            <p class="card-text" *ngFor="let coach of jedan_tim.coaches">Coach: <span
+                                    class="team_name">{{coach.coach_name}}</span></p>
+                            <button type="button" class="btn btn-warning btn-block" data-toggle="modal"
+                                data-target="#lastGameModal" (click)="ucitajLastGame()">
+                                Last Game
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                   <div class="col-lg-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12" [ngClass]="status ? 'showTeam' : 'hideTeam'">
+                        <div class="table-responsive table-fixed">
+                            <table class="table table-dark text-center ">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="col-1">Number</th>
+                                        <th scope="col" class="col-3">Player Name</th>
+                                        <th scope="col" class="col-2">Position</th>
+                                        <th scope="col" class="col-2">Country</th>
+                                        <th scope="col" class="col-1">Age</th>
+                                        <th scope="col" class="col-1">Goals</th>
+                                        <th scope="col" class="col-1"><i class="fas fa-square yellow_card"></i></th>
+                                        <th scope="col" class="col-1"><i class="fas fa-square red_card"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let player of jedan_tim.players">
+                                        <td class="col-1">{{player.player_number}}</td>
+                                        <td class="col-3">{{player.player_name}}</td>
+                                        <td class="col-2">{{player.player_type}}</td>
+                                        <td class="col-2">{{player.player_country}}</td>
+                                        <td class="col-1">{{player.player_age}}</td>
+                                        <td class="col-1">{{player.player_goals}}</td>
+                                        <td class="col-1">{{player.player_yellow_cards}}</td>
+                                        <td class="col-1">{{player.player_red_cards}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Last Game Modal -->
+<div class="modal fade" id="lastGameModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Last Game</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- <p>Opponent: <span *ngFor="let tim of timovi">
+                                <span *ngIf="tim.team_key == opponent">{{tim.team_name}}</span>
+                                    </span>
+                        </p> -->
+                        <p>Home team: <b>{{lastGame.event_home_team}}</b></p>
+                        <p>Away team: <b>{{lastGame.event_away_team}}</b></p>
+                        <p>Date: <b>{{lastGame.event_date}}</b></p>
+                        <p>Half-time result: <b>{{lastGame.event_halftime_result}}</b></p>
+                        <p>Final result: <b>{{lastGame.event_final_result}}</b></p>
+                    </div>
+                    <div class="col-lg-6">
+                        <google-chart #chart [title]="title1" [type]="type1" [data]="data1"
+                        [columnNames]="columnNames1" [options]="options1" [width]="width1" [height]="height1">
+                    </google-chart>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h5>Last Game Stats</h5>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <google-chart #chart [title]="title" [type]="type" [data]="data"
+                                    [columnNames]="columnNames" [options]="options" [width]="width" [height]="height">
+                                </google-chart>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="jumbotron jumbotronHeaderImg">
+          <h1 class="text-center"><b><i class="far fa-calendar-alt"></i> Upcoming Games <i
+                class="far fa-calendar-alt"></i></b></h1>
+                <h2 class="text-center"><b><i class="far fa-calendar-alt"></i> Upcoming Games <i
+                  class="far fa-calendar-alt"></i></b></h2>
+          <div class="table-responsive">
+            <table class="table table-dark table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Home Team</th>
+                  <th scope="col">Away Team</th>
+                  <th scope="col" class="text-center">League Round</th>
+                  <th scope="col" class="text-center">Date & Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngIf="utakmice.length == 0">
+                    <td colspan="4" class="text-center"> <b>There are no games scheduled</b></td>
+                </tr>
+                <tr *ngFor="let utakmica of utakmice" class="mobile">
+                  <td><img src="{{utakmica.home_team_logo}}" alt="home_team"> <br>{{utakmica.event_home_team}}</td>
+                  <td><img src="{{utakmica.away_team_logo}}" alt="away_team"> <br>{{utakmica.event_away_team}}</td>
+                  <td class="text-center">{{utakmica.league_round}}</td>
+                  <td class="text-center"><i>{{utakmica.event_date}}</i><br><i>{{utakmica.event_time}}</i></td>
+                </tr>
+                <tr *ngFor="let utakmica of utakmice" class="tablet">
+                  <td><img src="{{utakmica.home_team_logo}}" alt="home_team"> {{utakmica.event_home_team}}</td>
+                  <td><img src="{{utakmica.away_team_logo}}" alt="away_team"> {{utakmica.event_away_team}}</td>
+                  <td class="text-center">{{utakmica.league_round}}</td>
+                  <td class="text-center"><i>{{utakmica.event_date}}</i><br><i>{{utakmica.event_time}}</i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<app-footer></app-footer>

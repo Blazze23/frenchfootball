@@ -1,0 +1,22 @@
+
+
+@media (min-width: 300px) {
+     footer {
+         line-height: 12px;
+         padding: 5px;
+     }
+   p {
+       margin-bottom: 9px;
+   }
+   .col-md-4 {
+       margin-top: 10px;
+       margin-bottom: 10px;
+
+   }
+}
+
+@media (min-width: 768px) {
+    footer {
+        padding: 30px;
+    }
+}
