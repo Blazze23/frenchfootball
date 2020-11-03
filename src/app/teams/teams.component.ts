@@ -143,6 +143,6 @@ export class TeamsComponent implements OnInit {
   }
 
   dajStats() {
-    return this.http.get(this.mojservis.apiFtb+"Fixtures&APIkey="+this.mojservis.apiKey+"&leagueId=177&from=2020-02-10&to=2020-10-22")
+    return this.http.get(this.mojservis.apiFtb+"Fixtures&APIkey="+this.mojservis.apiKey+"&leagueId=177&from=2020-02-10&to=2021-10-22")
   }
 }
