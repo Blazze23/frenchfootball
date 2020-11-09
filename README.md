@@ -1,4 +1,6 @@
-# Mynba
+# Frenchfootball
+
+Angular app that uses free API to return 2nd French football league statistics.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
 
