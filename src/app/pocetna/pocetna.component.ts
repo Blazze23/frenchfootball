@@ -28,7 +28,7 @@ export class PocetnaComponent implements OnInit {
       niz_utakmice = Object(data).result;
       console.log(niz_utakmice);
       for (let i = 0; i < niz_utakmice.length; i++) {
-        if (niz_utakmice[i].event_status == null || niz_utakmice[i].event_status == "Cancelled") {
+        if (niz_utakmice[i].event_status == "" || niz_utakmice[i].event_status == "Cancelled") {
           this.utakmice.push(niz_utakmice[i]);
         }
       }
@@ -37,6 +37,6 @@ export class PocetnaComponent implements OnInit {
   }
 
   dajUtakmice() {
-    return this.http.get(this.mojservis.apiFtb + "Fixtures&APIkey=" + this.mojservis.apiKey + "&leagueId=177" + "&from=2020-05-15&to=2020-05-30");
+    return this.http.get(this.mojservis.apiFtb + "Fixtures&APIkey=" + this.mojservis.apiKey + "&leagueId=177" + "&from=2021-01-01&to=2021-06-30");
   }
 }
