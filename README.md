@@ -2,7 +2,7 @@
 
 Angular app built with Bootstrap 4, that uses free API to return 2nd French football league statistics.
 
-Libraries that were used: Google Charts, Toastr, Sweetalerts2.
+Libraries that were used: Google Charts, Toastr, Sweetalerts2, Fontawesome
 
 It displays upcoming games, standings, teams with their rosters and last game statistics, best scorers list, create my team section where you can add 11 players from all the teams in the league.
 
