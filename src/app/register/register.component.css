@@ -20,6 +20,14 @@
     
 }
 
+a {
+    color: whitesmoke;
+}
+
+a:hover {
+    color: orange;
+}
+
 
 
 
